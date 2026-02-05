@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink1:#ff4d6d;
+  --pink2:#ff9a9e;
+  --pink3:#fad0c4;
+  --pink4:#ffc3a0;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  min-height:100vh;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--pink1), var(--pink2), var(--pink3), var(--pink4));
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow-x:hidden;
+}
+
+/* ---------- QUESTION CARD ---------- */
+.card {
+  background:rgba(255,255,255,0.95);
+  padding:45px 40px;
+  border-radius:28px;
+  text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,0.25);
+  max-width:420px;
+  width:90%;
+  animation:fadeIn 1.2s ease forwards;
+}
+
+.card h1 {
+  font-family:'Pacifico', cursive;
+  color:var(--pink1);
+  font-size:2.6rem;
+  margin-bottom:10px;
+}
+
+.card p {
+  font-size:1.1rem;
+  color:#555;
+}
+
+.buttons {
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:22px;
+}
+
+button {
+  padding:15px 34px;
+  border:none;
+  border-radius:999px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+#yesBtn {
+  background:var(--pink1);
+  color:white;
+  font-weight:600;
+  box-shadow:0 10px 20px rgba(255,77,109,.4);
+}
+
+#yesBtn:hover {
+  transform:translateY(-2px);
+}
+
+#noBtn {
+  background:#e0e0e0;
+  color:#333;
+}
+
+/* ---------- LOVE LETTER ---------- */
+.love {
+  display:none;
+  max-width:760px;
+  width:90%;
+  background:rgba(255,255,255,0.97);
+  border-radius:30px;
+  padding:50px 45px;
+  box-shadow:0 40px 80px rgba(0,0,0,.3);
+  animation:fadeIn 1.4s ease forwards;
+}
+
+.love h1 {
+  text-align:center;
+  font-family:'Pacifico', cursive;
+  color:var(--pink1);
+  font-size:2.8rem;
+  margin-bottom:30px;
+}
+
+.letter {
+  font-size:1.05rem;
+  line-height:1.9;
+  color:#444;
+  white-space:pre-line;
+}
+
+.signature {
+  margin-top:35px;
+  font-weight:600;
+  text-align:right;
+}
+
+/* ---------- HEARTS ---------- */
+.heart {
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:var(--pink1);
+  transform:rotate(45deg);
+  animation:floatUp linear forwards;
+  opacity:.8;
+}
+
+.heart::before,
+.heart::after {
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:var(--pink1);
+  border-radius:50%;
+}
+
+.heart::before { top:-9px; left:0; }
+.heart::after { left:-9px; top:0; }
+
+@keyframes floatUp {
+  from {
+    transform:translateY(0) rotate(45deg);
+    opacity:1;
+  }
+  to {
+    transform:translateY(-100vh) rotate(45deg);
+    opacity:0;
+  }
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:scale(.95);}
+  to {opacity:1; transform:scale(1);}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:600px) {
+  .card h1 {font-size:2.2rem;}
+  .love h1 {font-size:2.3rem;}
+  .letter {font-size:1rem;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>Will you be my Valentine?</h1>
+  <p><strong>Makanaka Wenga 💖</strong></p>
+  <div class="buttons">
+    <button id="yesBtn">Yes ❤️</button>
+    <button id="noBtn">No 🙈</button>
+  </div>
+</div>
+
+<div class="love" id="love">
+  <h1>I love you My dearest ❤️😘</h1>
+
+  <div class="letter">
+Dearest Makanaka,
+
+You know me… I’ve never really been good at this whole feelings thing. Not used to saying stuff like this, you know? Affection, all the soft words, the sweet little things — that’s never been my lane. I grew up thinking love was supposed to stay quiet, stay inside, not spill out in cards or conversations. I’m still learning how to even hold it properly without feeling awkward about it.
+
+But then there’s you.
+
+You kind of cracked something open in me I didn’t even know was closed. You made me see this side of myself I wasn’t sure existed — the part that actually wants to say nice things, that wants to be gentle, that wants to try even when I stumble over every word. I’m still clumsy with it. I still second-guess myself. I still feel like I’m figuring out the rules as I go. But I’m learning… I’m really trying. And it’s because of you that I even want to.
+
+You’re my honey bun, my little secret smile, the reason I catch myself grinning in empty rooms. Life was fine before — but it had no colour, no warmth, no music like the kind you bring into every single one of my days.
+
+So here it is, plain and honest: I love you. Not the loud, flashy movie kind — the quiet, steady kind. The kind that feels like coming home. You are, without question, the best thing that has ever happened to me.
+  </div>
+
+  <div class="signature">
+    Always yours,<br>
+    Munyaradzi Chikasha
+  </div>
+</div>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn  = document.getElementById("noBtn");
+const card   = document.getElementById("card");
+const love   = document.getElementById("love");
+
+let scale = 1;
+
+noBtn.addEventListener("click", () => {
+  scale += 0.2;
+  yesBtn.style.transform = `scale(${scale})`;
+});
+
+yesBtn.addEventListener("click", () => {
+  card.style.display = "none";
+  love.style.display = "block";
+  startHearts();
+});
+
+function startHearts() {
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.animationDuration = 4 + Math.random() * 3 + "s";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 7000);
+  }, 250);
+}
+</script>
+
+</body>
+</html>
